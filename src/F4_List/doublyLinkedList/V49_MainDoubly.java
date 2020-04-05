@@ -15,18 +15,22 @@ public class V49_MainDoubly {
         list.addToFront(mariam);
         list.addToFront(mustafa);
         list.print();
-        list.addToEnd(reem);
         System.out.println("=============");
+        list.addBefore(reem,mustafa);
         list.print();
-        System.out.println(list.getSize());
-        System.out.println("=============");
-        list.removeFromFront();
-        list.print();
-        System.out.println(list.getSize());
-        System.out.println("======================>");
-        list.print();
-        list.removeFromEnd();
-        list.print();
-        System.out.println(list.getSize());
+//        list.addToEnd(reem);
+//        System.out.println("=============");
+//        list.print();
+//        System.out.println(list.getSize());
+//        System.out.println("=============");
+//        list.removeFromFront();
+//        list.print();
+//        System.out.println(list.getSize());
+//        System.out.println("======================>");
+//        list.print();
+//        list.removeFromEnd();
+//        list.print();
+//        System.out.println(list.getSize());
+
     }
 }

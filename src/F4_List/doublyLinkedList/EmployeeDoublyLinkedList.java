@@ -7,6 +7,33 @@ public class EmployeeDoublyLinkedList {
     private EmployeeDoublyNode tail;
     private int size;//use to get how many element in the linked
 
+    public boolean addBefore(Employee newEmp, Employee existEmp) {
+        if (head == null) {
+            return false;
+        }
+        //find the existing employee
+        EmployeeDoublyNode current = head;
+        while (current != null && !current.getEmployee().equals(existEmp)) {
+            current = current.getNext();
+        }
+
+        if (current == null) {
+            return false;
+        }
+        // create new node for new employee
+        EmployeeDoublyNode newNode = new EmployeeDoublyNode(newEmp);
+        newNode.setPrevious(current.getPrevious());
+        newNode.setNext(current);
+        current.setPrevious(newNode);
+        if (head == current) {// check that the exist employee not the head
+            head = newNode;
+        } else {
+            newNode.getPrevious().setNext(newNode);
+        }
+        size++;
+        return true;
+    }
+
     public void addToFront(Employee employee) {
         //the previous field always be null for new node
         EmployeeDoublyNode node = new EmployeeDoublyNode(employee);

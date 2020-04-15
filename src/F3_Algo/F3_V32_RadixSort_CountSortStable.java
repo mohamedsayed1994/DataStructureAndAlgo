@@ -1,4 +1,4 @@
-package pack;
+package F3_Algo;
 
 import java.util.Arrays;
 

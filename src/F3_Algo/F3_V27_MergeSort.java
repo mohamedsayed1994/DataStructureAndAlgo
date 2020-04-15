@@ -1,12 +1,12 @@
-package pack;
+package F3_Algo;
 
 import java.util.Arrays;
 
-public class F3_V36_Challenge1 {
-    // Modify merge sort algorithm so that it sorts integers in descending order
+public class F3_V27_MergeSort {
     public static void main(String[] args) {
         int[] intArr = {20, 35, -15, 7, 55, 1, -22};
-        mergeSort(intArr, 0, intArr.length);
+        System.out.println(Arrays.toString(intArr));
+        mergeSort(intArr,0,intArr.length);
         System.out.println(Arrays.toString(intArr));
 
     }
@@ -22,7 +22,7 @@ public class F3_V36_Challenge1 {
     }
 
     private static void merge(int[] input, int start, int mid, int end) {
-        if (input[mid - 1] >= input[mid]) { // mean is already sorted
+        if (input[mid - 1] <= input[mid]) { // mean is already sorted
             return;
         }
         int i = start;
@@ -30,10 +30,9 @@ public class F3_V36_Challenge1 {
         int tempIndex = 0;
         int[] temp = new int[end - start];
         while (i < mid && j < end) {
-            temp[tempIndex++] = input[i] >= input[j] ? input[i++] : input[j++];
+            temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
         }
         System.arraycopy(input, i, input, start + tempIndex, mid - i);
         System.arraycopy(temp, 0, input, start, tempIndex);
     }
-
 }

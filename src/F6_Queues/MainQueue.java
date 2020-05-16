@@ -9,27 +9,36 @@ public class MainQueue {
         Employee mustafa = new Employee(3, "mustafa", "mohamed");
         Employee mohamed = new Employee(4, "mohamed", "mohamed");
 
-        ArrayQueue queue = new ArrayQueue(10);
-        queue.add(aly);
-        queue.add(mariam);
-        queue.add(mustafa);
-        System.out.println(queue.size());
-        queue.print();
-        System.out.println("First " + queue.peek());
-        queue.remove();
-        System.out.println("Size " + queue.size());
-        System.out.println("First " + queue.peek());
-        queue.remove();
-        System.out.println("Size " + queue.size());
-        System.out.println("First " + queue.peek());
-        queue.add(mohamed);
-        System.out.println("Size " + queue.size());
-        System.out.println("First " + queue.peek());
-        queue.remove();
-        queue.remove();
-        System.out.println("Size " + queue.size());
-        queue.add(mustafa);
-        queue.print();
+        CircularQueue c = new CircularQueue(5);
+        c.add(aly);
+        c.add(mariam);
+        c.remove();
+        c.add(mustafa);
+        c.remove();
+        c.add(mohamed);
+
+        c.print();
+//        ArrayQueue queue = new ArrayQueue(10);
+//        queue.add(aly);
+//        queue.add(mariam);
+//        queue.add(mustafa);
+//        System.out.println(queue.size());
+//        queue.print();
+//        System.out.println("First " + queue.peek());
+//        queue.remove();
+//        System.out.println("Size " + queue.size());
+//        System.out.println("First " + queue.peek());
+//        queue.remove();
+//        System.out.println("Size " + queue.size());
+//        System.out.println("First " + queue.peek());
+//        queue.add(mohamed);
+//        System.out.println("Size " + queue.size());
+//        System.out.println("First " + queue.peek());
+//        queue.remove();
+//        queue.remove();
+//        System.out.println("Size " + queue.size());
+//        queue.add(mustafa);
+//        queue.print();
     }
 
 }
